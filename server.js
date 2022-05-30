@@ -9,6 +9,7 @@ app.use(methodOverride('_method'));
 app.set('view engine', 'ejs');
 
 app.use('/public', express.static('public'));
+app.use('/img', express.static('img'));
 
 app.listen('7070', () => {
     console.log('listening on 7070');
@@ -57,9 +58,10 @@ app.get('/paragraph', (req, res) => {
     // });
 });
 
-app.get('/typing/:id', (req, res) => {
-    db.collection('book').findOne({ _id: parseInt(req.params.id) }, (err, result) => {
-        console.log(result);
-        res.render('typing.ejs', { post: result });
-    });
+app.get('/typing', (req, res) => {
+    res.render('typing.ejs');
+    // db.collection('book').findOne({ _id: parseInt(req.params.id) }, (err, result) => {
+    //     console.log(result);
+    //     res.render('typing.ejs', { post: result });
+    // });
 });

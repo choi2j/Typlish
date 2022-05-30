@@ -12,3 +12,10 @@ body {
 span {
     color: #907DFF;
 }
+
+.container {
+    display: block;
+    margin-right: 10%;
+    margin-left: 10%;
+    width: 80%;
+}
