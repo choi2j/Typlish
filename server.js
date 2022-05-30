@@ -49,11 +49,12 @@ app.get('/info/:name', (req, res) => {
     });
 });
 
-app.get('/paragraph/:id', (req, res) => {
-    db.collection('book').findOne({ _id: parseInt(req.params.id) }, (err, result) => {
-        console.log(result);
-        res.render('paragraph.ejs', { post: result });
-    });
+app.get('/paragraph', (req, res) => {
+    res.render('paragraph.ejs');
+    // db.collection('book').findOne({ _id: parseInt(req.params.id) }, (err, result) => {
+    //     console.log(result);
+    //     res.render('paragraph.ejs', { post: result });
+    // });
 });
 
 app.get('/typing/:id', (req, res) => {

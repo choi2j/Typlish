@@ -5,21 +5,10 @@
     text-decoration: none;
 }
 
+body {
+    margin: 0 100px;
+}
+
 span {
     color: #907DFF;
-}
-
-.navbar-brand {
-    font-size: 32px;
-    font-weight: 800;
-    margin: 0;
-    width: fit-content;
-}
-
-.nav-item {
-    font-size: 16px;
-    font-weight: 400;
-    margin: 0;
-    width: fit-content;
-    color: #9793AE;
 }

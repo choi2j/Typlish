@@ -9,10 +9,106 @@
     <title>typlish</title>
 </head>
 
+<style>
+    .grade {
+        font-size: 18px;
+        font-weight: 600;
+        background: #907DFF;
+        color: white;
+        border: none;
+        border-radius: 1rem;
+        padding: 0.8rem 3.5rem;
+        margin-right: 1rem;
+    }
+    
+    form {
+        margin-top: 5rem;
+    }
+    
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    td {
+        height: 2rem;
+    }
+    
+    a,
+    td {
+        font-size: 1rem;
+        color: #625F74;
+    }
+    
+    .thead {
+        color: #9793AE;
+        border-bottom: #ECEBF2 1px solid;
+    }
+    
+    .thead-title {
+        width: 80%;
+    }
+</style>
+
 <body>
 
-    <%- include('nav.html')%>
 
+    <%- include('./components/nav.ejs')%>
+        <form action="/home" method="get">
+            <input class="grade" type="button" value="1학년">
+            <input class="grade" type="button" value="2학년">
+            <input class="grade" type="button" value="3학년">
+        </form>
+        <form action="/paragraph" method="get">
+            <h1>본문</h1>
+            <table>
+                <thead class="thead">
+                    <td class="thead-title">제목</td>
+                    <td>시험 기간</td>
+                    <td>최근 기록</td>
+                </thead>
+                <tr>
+                    <td><a href="/paragraph">1. example title</a></td>
+                    <td>exam</td>
+                    <td>100타</td>
+                </tr>
+                <tr>
+                    <td><a href="">2. example title</a></td>
+                    <td>exam</td>
+                    <td>100타</td>
+                </tr>
+                <tr>
+                    <td><a href="">3. example title</a></td>
+                    <td>exam</td>
+                    <td>100타</td>
+                </tr>
+            </table>
+        </form>
+        <form action="/paragraph" method="get">
+            <h1>모의고사</h1>
+            <table>
+                <thead class="thead">
+                    <td class="thead-title">제목</td>
+                    <td>시험 기간</td>
+                    <td>최근 기록</td>
+                </thead>
+                <tr>
+                    <td><a href="/paragraph">1. example title</a></td>
+                    <td>exam</td>
+                    <td>100타</td>
+                </tr>
+                <tr>
+                    <td><a href="">2. example title</a></td>
+                    <td>exam</td>
+                    <td>100타</td>
+                </tr>
+                <tr>
+                    <td><a href="">3. example title</a></td>
+                    <td>exam</td>
+                    <td>100타</td>
+                </tr>
+            </table>
+        </form>
 </body>
 
 </html>

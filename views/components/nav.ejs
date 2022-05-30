@@ -1,0 +1,126 @@
+<style>
+    p {
+        margin: 0;
+        width: fit-content;
+    }
+    
+    nav {
+        display: flex;
+        flex-direction: row;
+        height: 56px;
+        width: 100%;
+    }
+    
+    div {
+        display: flex;
+        width: fit-content;
+        align-items: center;
+    }
+    
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        border: #9793AE 1px solid;
+        border-radius: 1rem;
+        padding: 1rem 2rem;
+    }
+    
+    li {
+        list-style: none;
+        text-align: right;
+        padding: 0.5rem 0;
+    }
+    
+    .navbar-brand {
+        font-size: 32px;
+        font-weight: 800;
+        margin: 0;
+        width: fit-content;
+    }
+    
+    .nav-item-set {
+        margin-left: auto;
+    }
+    
+    .nav-item {
+        font-size: 16px;
+        font-weight: 400;
+        margin-left: 1rem;
+        width: fit-content;
+        height: fit-content;
+        color: #9793AE;
+        background: transparent;
+        border: none;
+    }
+    
+    .navbar-item-li {
+        display: none;
+        position: absolute;
+        right: 7%;
+    }
+    
+    .li-button {
+        color: #9793AE;
+    }
+    
+    a:hover,
+    button:hover,
+    li:hover,
+    .li-button:hover {
+        cursor: pointer;
+        color: #625F74;
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        let button = document.querySelector(".showButton");
+        let counter = 0;
+        button.addEventListener("click", () => {
+            if (counter == 0) {
+                document.querySelector(".navbar-item-li").style.display = "flex";
+                counter++;
+            } else if (counter == 1) {
+                document.querySelector(".navbar-item-li").style.display = "none";
+                counter--;
+            };
+        });
+    });
+
+    // Theme Changer 개발
+    // document.addEventListener("DOMContentLoaded", () => {
+    //     let button = document.querySelector(".themeChanger");
+    //     let counter = 0;
+    //     button.addEventListener("click", () => {
+    //         if (counter == 0) {
+    //             document.querySelector("p").style.color = "";
+    //             counter++;
+    //         } else if (counter == 1) {
+    //             document.querySelector(".navbar-info").style.display = "none";
+    //             counter--;
+    //         };
+    //     });
+    // });
+</script>
+
+<nav>
+    <div>
+        <p class="navbar-brand"><span>typlish</span></p>
+    </div>
+    <div class="nav-item-set">
+        <a class="nav-item" href="/home">홈 화면</a>
+        <button class="nav-item themeChanger">다크테마</button>
+        <button class="nav-item showButton">Info</button>
+    </div>
+</nav>
+<div class="navbar-item-li">
+    <ul>
+        <li>
+            <a class="li-button" href="/info">사용자 정보</a>
+        </li>
+        <li>
+            <a class="li-button" href="">로그아웃</a>
+        </li>
+    </ul>
+</div>
