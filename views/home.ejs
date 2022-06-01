@@ -11,7 +11,7 @@
 
 <style>
     .home_grade-button-container {
-        margin-top: 100px;
+        margin-top: 50px;
     }
     
     .home_grade-button {
@@ -74,6 +74,12 @@
         color: #9793AE;
         border-bottom: #ECEBF2 1px solid;
     }
+    
+    .paragraph-table-container p {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #504D66;
+    }
 </style>
 
 <body>
@@ -88,7 +94,7 @@
             </div>
             <form action="/paragraph" method="get">
                 <div class="paragraph-table-container">
-                    <h1>교과서 본문</h1>
+                    <p>교과서 본문</p>
                     <table class="paragraph-table">
                         <tr>
                             <td class="title">제목</td>
@@ -98,7 +104,7 @@
                         <% for (let i = 1; i <=3; i++){ %>
                             <tr>
                                 <td>
-                                    <a href="/typing">
+                                    <a href="/paragraph">
                                         <%=i%>. title
                                     </a>
                                 </td>
@@ -113,7 +119,7 @@
                     </table>
                 </div>
                 <div class="paragraph-table-container">
-                    <h1>모의고사 지문</h1>
+                    <p>모의고사 지문</p>
                     <table class="paragraph-table">
                         <tr>
                             <td class="title">제목</td>

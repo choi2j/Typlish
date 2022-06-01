@@ -9,9 +9,71 @@
     <title>typlish</title>
 </head>
 
+<style>
+    .goTo-button-container {
+        margin-top: 50px;
+    }
+    
+    .paragraph-container {
+        margin-top: 50px;
+        text-align: left;
+        width: 100%;
+        color: #625F74;
+    }
+    
+    .paragraph-table {
+        width: 100%;
+        font-size: 1rem;
+        font-weight: 400;
+    }
+    
+    .title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        width: 80%;
+    }
+    
+    .date {
+        width: 10%;
+    }
+    
+    .record {
+        width: 10%;
+    }
+    
+    .paragraph-container p {
+        margin: 3rem 0;
+        font-size: 1.2rem;
+        font-weight: 400;
+    }
+</style>
+
 <body>
 
     <%- include('./components/nav.ejs')%>
+
+        <section>
+            <div class="goTo-button-container">
+                <a href="" class="goTo-button">
+                    <img src="../svg/paragraph_on.svg" alt="paragraph_on">
+                </a>
+                <a href="" class="goTo-button">
+                    <img src="../svg/typing_off.svg" alt="typing_off">
+                </a>
+            </div>
+            <div class="paragraph-container">
+                <table class="paragraph-table">
+                    <tr>
+                        <td class="title">제목</td>
+                        <td class="date">시험기간</td>
+                        <td class="record">타자기록</td>
+                    </tr>
+                </table>
+                <% for (let i = 1; i <=40; i++){ %>
+                    <p>With only two minutes to play, both teams were fighting for the football.</p>
+                    <% } %>
+            </div>
+        </section>
 
 </body>
 
