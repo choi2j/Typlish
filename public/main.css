@@ -6,16 +6,9 @@
 }
 
 body {
-    margin: 0 100px;
+    margin: 0;
 }
 
-span {
-    color: #907DFF;
-}
-
-.container {
-    display: block;
-    margin-right: 10%;
-    margin-left: 10%;
-    width: 80%;
+section {
+    margin: 0 150px;
 }

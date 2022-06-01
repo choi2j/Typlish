@@ -1,125 +1,99 @@
 <style>
-    p {
-        margin: 0;
-        width: fit-content;
-    }
-    
     nav {
         display: flex;
         flex-direction: row;
-        height: 56px;
-        width: 100%;
+        align-items: center;
+        padding: 1rem 100px;
     }
     
     div {
-        display: flex;
         width: fit-content;
-        align-items: center;
+        text-align: center;
     }
     
     ul {
-        list-style-type: none;
-        margin: 0;
+        list-style: none;
         padding: 0;
-        border: #9793AE 1px solid;
-        border-radius: 1rem;
-        padding: 1rem 2rem;
     }
     
-    li {
-        list-style: none;
-        text-align: right;
-        padding: 0.5rem 0;
+    a,
+    button {
+        padding: 0;
+        cursor: pointer;
     }
     
     .navbar-brand {
-        height: 2rem;
-        margin: 0;
-        width: fit-content;
+        height: 2.5rem;
     }
     
-    .nav-item-set {
+    .navbar-button-container {
         margin-left: auto;
     }
     
-    .nav-item {
-        font-size: 16px;
-        font-weight: 400;
-        margin-left: 1rem;
-        width: fit-content;
-        height: fit-content;
+    .navbar-button-item,
+    .navbar-list-item * {
         color: #9793AE;
-        background: transparent;
+        background: none;
         border: none;
+        font-size: 1rem;
+        margin-left: 1rem;
     }
     
-    .navbar-item-li {
-        display: none;
+    .navbar-list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        padding: 0.5rem;
+    }
+    
+    .navbar-list-container {
         position: absolute;
-        right: 7%;
+        top: 4rem;
+        right: 100px;
+        display: none;
+        border: #9793AE 1px solid;
+        border-radius: 10px;
     }
     
-    .li-button {
-        color: #9793AE;
-    }
-    
-    a:hover,
-    button:hover,
-    li:hover,
-    .li-button:hover {
-        cursor: pointer;
-        color: #625F74;
+    .navbar-list-item {
+        margin: 0.3rem 0.5rem;
     }
 </style>
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-        let button = document.querySelector(".showButton");
+        let button = document.querySelector(".navbar-button-list");
         let counter = 0;
         button.addEventListener("click", () => {
             if (counter == 0) {
-                document.querySelector(".navbar-item-li").style.display = "flex";
+                document.querySelector(".navbar-list-container").style.display = "flex";
                 counter++;
             } else if (counter == 1) {
-                document.querySelector(".navbar-item-li").style.display = "none";
+                document.querySelector(".navbar-list-container").style.display = "none";
                 counter--;
             };
         });
     });
-
-    // Theme Changer 개발
-    // document.addEventListener("DOMContentLoaded", () => {
-    //     let button = document.querySelector(".themeChanger");
-    //     let counter = 0;
-    //     button.addEventListener("click", () => {
-    //         if (counter == 0) {
-    //             document.querySelector("p").style.color = "";
-    //             counter++;
-    //         } else if (counter == 1) {
-    //             document.querySelector(".navbar-info").style.display = "none";
-    //             counter--;
-    //         };
-    //     });
-    // });
 </script>
 
 <nav>
     <div>
-        <img src="../../img/typlish_logo.svg" alt="logo" class="navbar-brand">
+        <img src="../../svg/typlish_logo.svg" alt="logo" class="navbar-brand">
     </div>
-    <div class="nav-item-set">
-        <a class="nav-item" href="/home">홈 화면</a>
-        <button class="nav-item themeChanger">다크테마</button>
-        <button class="nav-item showButton">Info</button>
+    <div class="navbar-button-container">
+        <a href="/home" class="navbar-button-item">홈으로</a>
+        <button class="navbar-button-item">다크테마</button>
+        <button class="navbar-button-item navbar-button-list">사용자</button>
+    </div>
+    <div class="navbar-list-container">
+        <ul class="navbar-list">
+            <li class="navbar-list-item">
+                <a href="">마이페이지</a>
+            </li>
+            <li class="navbar-list-item">
+                <button>로그아웃</button>
+            </li>
+        </ul>
     </div>
 </nav>
-<div class="navbar-item-li">
-    <ul>
-        <li>
-            <a class="li-button" href="/info">사용자 정보</a>
-        </li>
-        <li>
-            <a class="li-button" href="">로그아웃</a>
-        </li>
-    </ul>
-</div>

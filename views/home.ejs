@@ -10,113 +10,137 @@
 </head>
 
 <style>
-    .grade {
-        font-size: 18px;
-        font-weight: 500;
-        background: #ECEBF2;
-        color: #9793AE;
+    .home_grade-button-container {
+        margin-top: 100px;
+    }
+    
+    .home_grade-button {
+        margin-right: 16px;
+        height: 3rem;
+        width: 10rem;
+        font-size: 1.1rem;
+        font-weight: 600;
         border: none;
-        border-radius: 1rem;
-        padding: 0.8rem 3.5rem;
-        margin-right: 1rem;
-        cursor: pointer;
+        border-radius: 16px;
+        color: #9793AE;
+        background: #ECEBF2;
     }
     
     .active {
-        background: #907DFF;
         color: white;
+        background: #907DFF;
     }
     
-    form {
-        margin-top: 5rem;
-    }
-    
-    table {
-        border-collapse: collapse;
+    .paragraph-table-container {
+        margin-top: 100px;
+        text-align: left;
         width: 100%;
     }
     
-    td {
-        height: 2rem;
+    .paragraph-table {
+        width: 100%;
+        font-size: 1rem;
+        font-weight: 400;
     }
     
-    a,
     td {
-        font-size: 1rem;
+        padding: 0.4rem 0;
         color: #625F74;
     }
     
-    .thead {
-        color: #9793AE;
-        border-bottom: #ECEBF2 1px solid;
+    a {
+        color: #625F74;
     }
     
-    .thead-title {
+    a:focus {
+        color: #907DFF;
+    }
+    
+    .title {
         width: 80%;
+    }
+    
+    .date {
+        width: 10%;
+    }
+    
+    .record {
+        width: 10%;
+    }
+    
+    .title,
+    .date,
+    .record {
+        color: #9793AE;
+        border-bottom: #ECEBF2 1px solid;
     }
 </style>
 
 <body>
 
-
     <%- include('./components/nav.ejs')%>
-        <div class="container">
-            <form action="/home" method="get">
-                <input class="grade active" type="button" value="1학년">
-                <input class="grade" type="button" value="2학년">
-                <input class="grade" type="button" value="3학년">
+
+        <section>
+            <div class="home_grade-button-container">
+                <button class="home_grade-button active">1학년</button>
+                <button class="home_grade-button" onclick="alert('Work In Progress')">2학년</button>
+                <button class="home_grade-button" onclick="alert('Work In Progress')">3학년</button>
+            </div>
+            <form action="/paragraph" method="get">
+                <div class="paragraph-table-container">
+                    <h1>교과서 본문</h1>
+                    <table class="paragraph-table">
+                        <tr>
+                            <td class="title">제목</td>
+                            <td class="date">시험기간</td>
+                            <td class="record">타자기록</td>
+                        </tr>
+                        <% for (let i = 1; i <=3; i++){ %>
+                            <tr>
+                                <td>
+                                    <a href="/typing">
+                                        <%=i%>. title
+                                    </a>
+                                </td>
+                                <td>
+                                    date
+                                </td>
+                                <td>
+                                    record
+                                </td>
+                            </tr>
+                            <% } %>
+                    </table>
+                </div>
+                <div class="paragraph-table-container">
+                    <h1>모의고사 지문</h1>
+                    <table class="paragraph-table">
+                        <tr>
+                            <td class="title">제목</td>
+                            <td class="date">시험기간</td>
+                            <td class="record">타자기록</td>
+                        </tr>
+                        <% for (let i = 1; i <=3; i++){ %>
+                            <tr>
+                                <td>
+                                    <a href="/typing">
+                                        <%=i%>. title
+                                    </a>
+                                </td>
+                                <td>
+                                    date
+                                </td>
+                                <td>
+                                    record
+                                </td>
+                            </tr>
+                            <% } %>
+                    </table>
+                </div>
             </form>
-            <form action="/typing" method="get">
-                <h1>본문</h1>
-                <table>
-                    <thead class="thead">
-                        <td class="thead-title">제목</td>
-                        <td>시험 기간</td>
-                        <td>최근 기록</td>
-                    </thead>
-                    <tr>
-                        <td><a href="/typing">1. example title</a></td>
-                        <td>exam</td>
-                        <td>100타</td>
-                    </tr>
-                    <tr>
-                        <td><a href="">2. example title</a></td>
-                        <td>exam</td>
-                        <td>100타</td>
-                    </tr>
-                    <tr>
-                        <td><a href="">3. example title</a></td>
-                        <td>exam</td>
-                        <td>100타</td>
-                    </tr>
-                </table>
-            </form>
-            <form action="/typing" method="get">
-                <h1>모의고사</h1>
-                <table>
-                    <thead class="thead">
-                        <td class="thead-title">제목</td>
-                        <td>시험 기간</td>
-                        <td>최근 기록</td>
-                    </thead>
-                    <tr>
-                        <td><a href="/typing">1. example title</a></td>
-                        <td>exam</td>
-                        <td>100타</td>
-                    </tr>
-                    <tr>
-                        <td><a href="">2. example title</a></td>
-                        <td>exam</td>
-                        <td>100타</td>
-                    </tr>
-                    <tr>
-                        <td><a href="">3. example title</a></td>
-                        <td>exam</td>
-                        <td>100타</td>
-                    </tr>
-                </table>
-            </form>
-        </div>
+
+        </section>
+
 </body>
 
 </html>
