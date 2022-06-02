@@ -28,7 +28,7 @@ app.listen('7070', () => {
 // })
 
 app.get('/', (req, res) => {
-    res.render('index.ejs');
+    res.redirect('/login');
 });
 
 app.get('/register', (req, res) => {
