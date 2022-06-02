@@ -12,3 +12,7 @@ body {
 section {
     margin: 0 20%;
 }
+
+*:focus {
+    outline: none;
+}
