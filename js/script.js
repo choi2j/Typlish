@@ -8,7 +8,7 @@ const typingText = document.querySelector(".typing-text p"),
 
 let timer,
     timeSpent = charIndex = mistakes = isTyping = 0;
-
+// 여기 채팅 기능 있음. 왼쪽 아래 LIVE SHARE 들어가면 거기 맨 아래에 session chat 있음
 function loadParagraph() {
     typingText.innerHTML = "";
     for (let i = 0; i < paragraphs.length; i++) {
@@ -16,12 +16,11 @@ function loadParagraph() {
             paragraphs[i].split("").forEach(char => {
                 let span = `<span>${char}</span>`
                 typingText.innerHTML += span;
-            }, 1000);
-            let spanBr = `<span><br> </span>`
+            }, 1);
+            let spanBr = `<span><br></span>`;
             typingText.innerHTML += spanBr;
         });
     }
-    typingText.querySelectorAll("span")[0].classList.add("active");
     document.addEventListener("keydown", () => inpField.focus());
     typingText.addEventListener("click", () => inpField.focus());
 }
@@ -29,7 +28,6 @@ function loadParagraph() {
 function initTyping() {
     let characters = typingText.querySelectorAll("span");
     let typedChar = inpField.value.split("")[charIndex];
-    let typedCharset = inpField.value.split(" ")[charIndex];
     if (charIndex < characters.length - 1) {
         if (!isTyping) {
             timer = setInterval(initTimer, 1000);
@@ -56,7 +54,7 @@ function initTyping() {
         characters[charIndex].classList.add("active");
 
         accTag.innerText = Math.floor((characters.length - mistakes) / characters.length * 100);
-        cpmTag.innerText = charIndex - mistakes;
+        cpmTag.innerText = Math.floor((characters.length - mistakes) / timeSpent);
 
 
         var incorrects = document.getElementsByClassName("incorrect").innerText;

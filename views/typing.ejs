@@ -5,47 +5,13 @@
 <head>
     <meta charset="utf-8">
     <title>Typlish</title>
-    <link rel="preload" as="style" href="/public/style.css" onload="this.onload=null;this.rel='StyleSheet'">
-    <link rel="preload" as="style" href="/public/main.css" onload="this.onload=null;this.rel='StyleSheet'">
+    <link rel="stylesheet" href="/public/style.css">
+    <link rel="stylesheet" href="/public/main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <style>
     .goTo-button-container {
         margin-top: 50px;
-    }
-    
-    .paragraph-container {
-        margin-top: 50px;
-        text-align: left;
-        width: 100%;
-        color: #625F74;
-    }
-    
-    .paragraph-table {
-        width: 100%;
-        font-size: 1rem;
-        font-weight: 400;
-    }
-    
-    .title {
-        font-size: 1.8rem;
-        font-weight: 700;
-        width: 80%;
-    }
-    
-    .date {
-        width: 10%;
-    }
-    
-    .record {
-        width: 10%;
-    }
-    
-    .paragraph-container p {
-        margin: 3rem 0;
-        font-size: 1.2rem;
-        font-weight: 400;
-        padding-left: 5px;
     }
 </style>
 
@@ -55,14 +21,14 @@
         <section>
             <div class="goTo-button-container">
                 <a href="/typing" class="goTo-button">
-                    <img src="../svg/typing_off.svg" alt="typing_off">
+                    <img src="../svg/typing_off.svg" alt="typing_on">
                 </a>
                 <a href="/paragraph" class="goTo-button">
-                    <img src="../svg/paragraph_on.svg" alt="paragraph_on">
+                    <img src="../svg/paragraph_on.svg" alt="paragraph_off">
                 </a>
             </div>
             <div class="wrapper">
-                <textarea type="text" class="input-field"></textarea>
+                <input type="text" class="input-field">
                 <div class="content-box">
                     <div class="typing-text">
                         <p></p>
@@ -91,8 +57,8 @@
                 </div>
             </div>
         </section>
-        <script src="/js/paragraphs.js" async></script>
-        <script src="/js/script.js" async></script>
+        <script src="/js/paragraphs.js"></script>
+        <script src="/js/script.js"></script>
 
 </body>
 
