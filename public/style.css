@@ -74,7 +74,7 @@ body {
 }
 
 .typing-text p span.active {
-    color: #17A2B8;
+    color: #907DFF;
 }
 
 .typing-text p span.active::before {

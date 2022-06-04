@@ -12,9 +12,13 @@ let timer,
 function loadParagraph() {
     typingText.innerHTML = "";
     for (let i = 0; i < paragraphs.length; i++) {
-        paragraphs[i].split("").forEach(char => {
-            let span = `<span>${char}</span>`
-            typingText.innerHTML += span;
+        setTimeout(() => {
+            paragraphs[i].split("").forEach(char => {
+                let span = `<span>${char}</span>`
+                typingText.innerHTML += span;
+            }, 1000);
+            let spanBr = `<span><br> </span>`
+            typingText.innerHTML += spanBr;
         });
     }
     typingText.querySelectorAll("span")[0].classList.add("active");
