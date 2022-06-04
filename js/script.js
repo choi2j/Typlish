@@ -17,7 +17,7 @@ function loadParagraph() {
                 let span = `<span>${char}</span>`
                 typingText.innerHTML += span;
             }, 1);
-            let spanBr = `<span><br></span>`;
+            let spanBr = `<span><br><br></span>`;
             typingText.innerHTML += spanBr;
         });
     }

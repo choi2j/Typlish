@@ -11,7 +11,11 @@
 </head>
 <style>
     .goTo-button-container {
-        margin-top: 50px;
+        margin: 50px 0;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
     }
 </style>
 
@@ -21,14 +25,14 @@
         <section>
             <div class="goTo-button-container">
                 <a href="/typing" class="goTo-button">
-                    <img src="../svg/typing_off.svg" alt="typing_on">
+                    <img src="../svg/typing_on.svg" alt="typing_on">
                 </a>
                 <a href="/paragraph" class="goTo-button">
-                    <img src="../svg/paragraph_on.svg" alt="paragraph_off">
+                    <img src="../svg/paragraph_off.svg" alt="paragraph_off">
                 </a>
             </div>
             <div class="wrapper">
-                <input type="text" class="input-field">
+                <input type="text" class="input-field" style="ime-mode:inactive">
                 <div class="content-box">
                     <div class="typing-text">
                         <p></p>
