@@ -32,33 +32,44 @@
                 </a>
             </div>
             <div class="wrapper">
-                <input type="text" class="input-field" style="ime-mode:inactive">
-                <div class="content-box">
-                    <div class="typing-text">
+
+                <%for (let i=0;i<10;i++){%>
+                    <div>
                         <p></p>
+                        <input type="text">
                     </div>
-                    <div class="content">
-                        <ul class="result-details">
-                            <li class="time">
-                                <p>Time:</p>
-                                <span><b>0</b>s</span>
-                            </li>
-                            <li class="acc">
-                                <p>Accuracy:</p>
-                                <span>0</span>
-                            </li>
-                            <li class="cpm">
-                                <p>CPM:</p>
-                                <span>0</span>
-                            </li>
-                        </ul>
-                        <button>submit</button>
-                        <div class="mistaken">
-                            <p>오타 check!</p>
-                            <span></span>
+                    <%}%>
+
+
+
+
+                        <input type="text" class="input-field" style="ime-mode:inactive">
+                        <div class="content-box">
+                            <div class="typing-text">
+                                <p></p>
+                            </div>
+                            <div class="content">
+                                <ul class="result-details">
+                                    <li class="time">
+                                        <p>Time:</p>
+                                        <span><b>0</b></span>
+                                    </li>
+                                    <li class="acc">
+                                        <p>Accuracy:</p>
+                                        <span>0</span>
+                                    </li>
+                                    <li class="cpm">
+                                        <p>CPM:</p>
+                                        <span>0</span>
+                                    </li>
+                                </ul>
+                                <button>submit</button>
+                                <div class="mistaken">
+                                    <p>오타 check!</p>
+                                    <span></span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
             </div>
         </section>
         <script src="/js/paragraphs.js"></script>

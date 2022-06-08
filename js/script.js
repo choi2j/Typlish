@@ -53,7 +53,7 @@ function initTyping() {
         characters.forEach(span => span.classList.remove("active"));
         characters[charIndex].classList.add("active");
 
-        accTag.innerText = Math.floor((characters.length - mistakes) / characters.length * 100);
+        accTag.innerText = Math.floor((characters.length - mistakes) / characters.length * 100) + '%';
         cpmTag.innerText = Math.floor((characters.length - mistakes) / timeSpent);
 
 
@@ -70,7 +70,11 @@ function initTimer() {
         setTimeout(() => {
             timeSpent += 1;
         }, 1000);
-        timeTag.innerText = timeSpent;
+        if (timeSpent % 60 == 0) {
+            timeTag.innerText = Math.floor(timeSpent / 60) + 'm ' + 0 + 's';
+        } else {
+            timeTag.innerText = Math.floor(timeSpent / 60) + 'm ' + timeSpent % 60 + 's';
+        }
     } else {
         clearInterval(timer);
     }

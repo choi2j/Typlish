@@ -16,3 +16,7 @@ section {
 *:focus {
     outline: none;
 }
+
+input {
+    ime-mode: disabled;
+}
