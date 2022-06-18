@@ -4,7 +4,6 @@
         flex-direction: row;
         align-items: center;
         padding: 1rem 15%;
-        background: white;
     }
     
     div {
@@ -37,7 +36,7 @@
         background: none;
         border: none;
         font-size: 1rem;
-        margin-left: 1rem;
+        /* margin-left: 1rem; */
     }
     
     .navbar-list {
@@ -51,11 +50,10 @@
     .navbar-list-container {
         position: absolute;
         top: 4rem;
-        right: 15%;
+        right: 13%;
         display: none;
         border: #9793AE 1px solid;
         border-radius: 10px;
-        background-color: white;
     }
     
     .navbar-list-item {
@@ -85,7 +83,7 @@
     </div>
     <div class="navbar-button-container">
         <a href="/home" class="navbar-button-item">홈으로</a>
-        <button class="navbar-button-item navbar-button-list">사용자</button>
+        <button style="margin-left: 1rem;" class="navbar-button-item navbar-button-list">사용자</button>
     </div>
     <div class="navbar-list-container">
         <ul class="navbar-list">
@@ -93,7 +91,8 @@
                 <button>다크테마</button>
             </li>
             <li class="navbar-list-item">
-                <button>로그아웃</button>
+                <form id="myform" method="post" action="/logout"></form>
+                <button><a onclick="document.getElementById('myform').submit();">로그아웃</a></button>
             </li>
         </ul>
     </div>

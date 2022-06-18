@@ -10,6 +10,9 @@
 </head>
 
 <style>
+    .show{
+        visibility: visible !important;
+    }
     form {
         width: 100%;
         height: 100vh;
@@ -57,7 +60,6 @@
         border-bottom: white 1px solid;
         margin: 2rem 0;
         color: white;
-        font-size: 1.3rem;
         padding: 5px 10px;
     }
     
@@ -83,14 +85,15 @@
 
 <body>
 
-    <form>
+    <form action="/register" method="POST">
         <div class="account-container">
             <img src="/svg/typlish_logo.svg" alt="logo">
             <div class="account-input">
                 <p>Sign up</p>
-                <input type="email" name="" id="" placeholder="e-mail" class="input-email input">
+                <input type="email" name="id" id="" placeholder="e-mail" class="input-email input">
                 <input type="password" name="pw" id="" placeholder="password" class="input-password input">
                 <input type="submit" value="" class="input-button">
+                <p style="visibility: hidden;" class="<%= show%>">이미 아이디가 존재합니다</p>
                 <a href="/login">Already have an account? Sign in</a>
             </div>
         </div>

@@ -28,12 +28,12 @@
         background: #ECEBF2;
         width: fit-content;
         display: flex;
-        border-radius: 50px;
+        border-radius: 90px;
     }
     
     .account-input {
         width: 500px;
-        border-radius: 50px;
+        border-radius: 90px;
         background: #907DFF99;
         padding: 100px;
         display: flex;
@@ -79,19 +79,42 @@
         width: fit-content;
         margin-top: 10px;
     }
+    body{
+        position: relative;
+    }
+    body::before{
+        background-image: url('/img/typing.webp');
+        background-repeat: no-repeat;
+        background-size: cover;
+        content:"";
+        opacity: 0.2;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+    }
+    body form{
+        position: relative;
+    }
+    img{
+        width: 196px;
+        margin: 0;
+        margin-right: 100px;
+        margin-bottom: 100px;
+    }
 </style>
 
 <body>
-
-    <form>
+    <form action="/login" method="POST">
         <div class="account-container">
-            <img src="/svg/typlish_logo.svg" alt="logo">
             <div class="account-input">
-                <p>Sign in</p>
-                <input type="email" name="" id="" placeholder="e-mail" class="input-email input">
+                <img src="/svg/5.svg" alt="logo">
+                <!-- <p>Sign in</p> -->
+                <input type="email" name="id" id="" placeholder="e-mail" class="input-email input">
                 <input type="password" name="pw" id="" placeholder="password" class="input-password input">
-                <input type="submit" value="" class="input-button">
                 <a href="/register">Don't have an account? Sign up</a>
+                <input type="submit" value="" class="input-button">
             </div>
         </div>
     </form>
